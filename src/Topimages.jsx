@@ -44,7 +44,7 @@ function Topimages() {
             key={index}
             src={image}
             alt={`Slide ${index}`}
-            className="absolute  w-[50vw] h-[86vh] object-cover rounded-tl-xl rounded-bl-xl"
+            className="absolute  md:w-[50vw] md:h-[86vh]  object-cover md:rounded-tl-xl w-full h-[40vh] md:rounded-bl-xl rounded-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: index === currentIndex ? 1 : 0 }}
             exit={{ opacity: 0 }}
@@ -53,13 +53,13 @@ function Topimages() {
         ))}
       </AnimatePresence>
       <button
-        className="absolute top-1/2 left-2 transform -translate-y-1/2 text-lg h-[8vh] w-[2vw] rounded bg-[rgba(225,225,225,0.2)]"
+        className="absolute top-1/2 left-2 transform -translate-y-1/2 text-lg md:h-[8vh] md:w-[2vw] h-[5vh] w-[4vw] rounded bg-[rgba(225,225,225,0.2)]"
         onClick={handlePrev}
       >
          &lt;
       </button>
       <button
-        className="absolute top-1/2 right-2 transform -translate-y-1/2 text-lg h-[8vh] w-[2vw] rounded bg-[rgba(225,225,225,0.2)]"
+        className="absolute top-1/2 right-2 transform -translate-y-1/2 text-lg md:h-[8vh] md:w-[2vw] h-[5vh] w-[4vw] rounded bg-[rgba(225,225,225,0.2)]"
         onClick={handleNext}
       >
         &gt;
