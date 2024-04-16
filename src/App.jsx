@@ -42,12 +42,14 @@ function App() {
 
     return () => clearInterval(interval);
   }, []);
+
+  //function for date and time
   const formatDate = (date) => {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return date.toLocaleDateString(undefined, options);
   };
 
-
+// function for fetch weather data from api
   const apidata=async()=>{
     try{
       const response= await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${input}?unitGroup=metric&key=V5PKTJMAA4ZCQNSLJQ3T8W3QJ&contentType=json`)
@@ -64,7 +66,7 @@ console.error("error in fetching data")
     
   }
   
-
+//for checking the api working fine
 console.log("days", gettingdays)
 
 console.log(current)
@@ -74,7 +76,7 @@ console.log(current)
   <div onMouseMove={handleMouseMove} className='w-full h-[150vh] md:h-[300vh] bg-gradient-to-t gap-[15vh] from-slate-800 via-blue-800 to-slate-800 flex flex-col items-center text-zinc-100'>
   <div className='w-[1vw] z-50 h-[2vh] rounded-full bg-[rgba(255,255,255,.3)]' style={{ position: 'fixed', left: cursorPosition.x, top: cursorPosition.y }}></div>
        
-
+{/* herosection i separate it two parts first for image and second for details */}
 <div className='bg-blue-700 shadow-[0_40px_60px_-10px_rgba(95,0,160,0.4)] md:w-[85vw] md:h-[92vh] md:mt-[6vh] w-[88%] h-[100vh] rounded-xl md:flex md:flex-row items-center mt-[2vh] md:gap-0 gap-10 flex flex-col'>
 {/* image section starts here */}
 <div className='bg-zinc-800 flex overflow-hidden md:h-[85vh] md:w-[57%] w-[85vw] h-[45vh] rounded-lg md:rounded-tl-xl md:rounded-bl-xl md:ml-[1.8vw] md:border-r-2 border-zinc-200 relative md:mt-0 mt-5'>
@@ -104,6 +106,8 @@ console.log(current)
 
        
         {/* image section ends here */}
+
+{/*   second part starts here */}
         <div className='bg-blue-900 text-white md:w-[39%] md:h-[85vh] h-[60vh] w-full  md:rounded-tr-xl flex flex-col items-center justify-around rounded-lg md:rounded-br-xl'>
         <div className=' md:w-[28vw] md:h-[25vh] border-b-2 border-slate-200  relative flex justify-around'>
         <FiSunrise className='md:text-[6vw] text-[10vw]' />
@@ -132,6 +136,10 @@ console.log(current)
         <p className='md:w-[28vw] text-white bg-blue-900 md:h-[10vh] px-8 border-b-2 py-5 border-zinc-200'>Description : {current.description}</p>
         </div>
         </div>
+{/*     second part end here */}
+
+{/*     next 15 days forecast part starts here */}
+{/*     i use a tenary operator for checking the user clicked on the 15 days forecast button or not */}
      {nextforecast ?(<div ref={forecastref} onMouseMove={handleMouseMove} className='md:w-full flex flex-col items-center justify-center md:h-[120vh]w-full '>
      <div className='w-[1vw] z-50 h-[2vh] rounded-full bg-[rgba(255,255,255,.3)]' style={{ position: 'fixed', left: cursorPosition.x, top: cursorPosition.y }}></div>
      <FaArrowDown className='absolute md:top-[97vh] top-[44vh] animate-bounce' />
