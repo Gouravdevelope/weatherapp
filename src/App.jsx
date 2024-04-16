@@ -89,13 +89,13 @@ console.log(current)
 
 
 
-<div className='absolute z-20 text-white md:top-[64vh] top-[25vh]  md:right-6 right-8 uppercase  flex md:h-[15vh]  md:w-[12vw]'>
+<div className='absolute z-20 text-white md:top-[64vh] top-[30vh]  md:right-6 right-8 uppercase  flex md:h-[15vh]  md:w-[12vw]'>
 <h1 className='md:text-[5vw] text-[10vw] md:mt-1'>{weatherdata.temp}</h1>
 <div className='md:w-[1.1vw] md:h-[2vh] w-3 h-3 border-2 rounded-full md:mt-7 mt-2 ml-2'></div>
 <p className='ml-0 md:text-[2vw] mt-7 text-lg md:mt-[7vh] '>c</p>
 
 </div>
-<div className='absolute z-20 text-white md:left-[4vw] md:top-[67vh] top-[4vh] left-[5vw]'>
+<div className='absolute z-20 text-white md:left-[4vw] md:top-[67vh] top-[2vh] left-[5vw]'>
   <h1 className='md:text-[2.6vw]'>{currentTime.toLocaleTimeString()}</h1>
   <p>{formatDate(currentTime)}</p>
 </div>
@@ -111,10 +111,10 @@ console.log(current)
         <h1 className='absolute text-white md:top-[15vh] md:left-[5vw] top-[6vh] right-[15vw] text-lg'>{weatherdata.sunrise}</h1>
         <h1 className='absolute text-white md:top-[15vh] md:left-[19vw] top-[6vh] left-[15vw] text-lg'>{weatherdata.sunset}</h1>
         </div>
-        <input className=' md:h-[6vh] md:mt-0 md:text-lg w-[25vw] md:w-[22vw] text-white bg-blue-900 px-20 border-b-2 mt-6 border-slate-200 font-semibold hover:border-2 hover:border-white' value={input} onChange={(e)=>setinput(e.target.value)} placeholder='Search for a city'/>
-        <button className='absolute md:h-[5vh] md:w-[2.5vw] rounded-full top-[62vh] left-[60vw] md:top-[39vh] md:left-[78vw] px-2 bg-blue-800' onClick={apidata}><RiSearchLine  className='md:text-2xl'/></button>
+        <input className=' md:h-[6vh] md:mt-0 md:text-lg w-[30vw] md:w-[22vw] text-white bg-blue-900 md:px-20 border-b-2 mt-6 border-slate-200 font-semibold hover:border-2 hover:border-white' value={input} onChange={(e)=>setinput(e.target.value)} placeholder='Search for a city'/>
+        <button className='absolute md:h-[5vh] md:w-[2.5vw] rounded-full top-[62vh] left-[65vw] md:top-[39vh] md:left-[78vw] px-2 bg-blue-800' onClick={apidata}><RiSearchLine  className='md:text-2xl'/></button>
         <p className='md:w-[28vw] bg-blue-900 md:h-[6vh] border-b-2 border-slate-200 md:text-lg flex items-center justify-center font-semibold'>{weatherdata.conditions}</p>
-        <div className='bg-blue-900 md:w-[28vw] md:h-[24vh]  flex'>
+        <div className='bg-blue-900 md:w-[28vw] md:h-[24vh] flex'>
           <div className='bg-blue-900 md:w-[50%] md:h-[100%] flex flex-col md:text-lg font-semibold'>
           <h1 className='md:h-[6vh] border-b-2  border-slate-200 flex items-center px-8'>Temperature</h1>
           <h1 className='md:h-[6vh] border-b-2 border-slate-200 flex items-center px-8 '>Humidity</h1>
@@ -153,9 +153,9 @@ console.log(current)
    
   </ul>
 </div>
-     </div>):(<h1>false</h1>)}   
-    <div className='md:w-[40vw] md:mt-[5vh]  flex items-center justify-center text-white md:h-[12vh] rounded-lg border-sky-200 shadow-[_0_0_2px_#fff,inset_0_0_5px_#08f,0_0_30px_#08f]'>
-    <h1 className='md:text-[3vw]'>Thankyou made by Gourav</h1>
+     </div>):(<h1 className='hidden'>false</h1>)}   
+    <div className='md:w-[40vw] md:mt-[5vh] w-[60vw] flex items-center justify-center text-white md:h-[12vh] h-[12vh] rounded-lg border-sky-200 shadow-[_0_0_2px_#fff,inset_0_0_5px_#08f,0_0_30px_#08f]'>
+    <h1 className='md:text-[3vw] text-lg'>Thankyou made by Gourav</h1>
     </div>
 
 </div>
